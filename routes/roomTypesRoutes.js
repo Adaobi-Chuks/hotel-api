@@ -1,6 +1,6 @@
 const express = require('express');
 const Controller = require('../controllers/roomTypeController');
-const constants = require("../constants");
+const constants = require("../constants/constants");
 const app = express();
 const router = express.Router();
 const {ROOMTYPE} = constants.MESSAGES;

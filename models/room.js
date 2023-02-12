@@ -1,5 +1,5 @@
 const {model, Schema, Types} = require('mongoose');
-const constants = require("../constants");
+const constants = require("../constants/constants");
 const {DATABASES} = constants;
 const ObjectId = Types.ObjectId;
 

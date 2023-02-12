@@ -1,6 +1,6 @@
 const express = require('express');
 const Controller = require('../controllers/roomController');
-const constants = require("../constants");
+const constants = require("../constants/constants");
 const app = express();
 const router = express.Router();
 const {ROOM} = constants.MESSAGES;

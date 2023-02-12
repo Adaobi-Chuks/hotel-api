@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 mongoose.set('strictQuery', true);
-const constants = require("./constants");
+const constants = require("../constants/constants");
 
 function database() {
     mongoose.connect(constants.DATABASE_URI, {

@@ -2,8 +2,8 @@ const express = require("express");
 const app = express();
 require("dotenv").config();
 const cors = require("cors");
-const constants = require("./constants");
-const database = require("./database");
+const constants = require("./constants/constants");
+const database = require("./db/database");
 const roomTypeRoutes = require("./routes/roomTypesRoutes");
 const roomRoutes = require("./routes/roomRoutes");
 

@@ -1,5 +1,5 @@
 const Room = require('../models/room');
-const constants = require("../constants");
+const constants = require("../constants/constants");
 const {ZERO} = constants;
 
 class Controller {

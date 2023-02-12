@@ -35,7 +35,7 @@ npm install
 ```
 
 # Testing
-This folder contains a Postman collection in the [Request.postman_collection.js](Request.postman_collection.json) file that you can import to Postman to test the endpoints.
+This folder contains a Postman collection in the [Request.postman_collection.js](postmanRequest) folder that you can import to Postman to test the endpoints.
 Make sure you replace the roomId and roomTypeId placeholder with a valid id where necessary.
 
 - You need to have Postman or any other similar app or extension installed to test this API.
