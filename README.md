@@ -1,7 +1,7 @@
 # HOTEL API
 
 # Overview
-A simple API for managing hotel operations. It provides services for managing rooms and room types. Documentation and code samples are available to help you get started quickly. The API has two main components: Room and Room Type.
+A simple API for managing hotel operations. It provides services for managing rooms and room types. The API has two main components: Room and Room Type.
 
 ## Room Type
 The Room Type component represents a type of room available in a hotel. A Room Type has the following properties:
@@ -30,12 +30,13 @@ DATABASE_URI = {The DATABASE_URI you created}
 - To run the solution, make sure you have [nodejs](https://nodejs.org/) installed.
 - Use the following command in your terminal to initialize the applicationa and to install the necessary dependencies.
 ```
-npm init
+npm init -y
+npm install
 ```
 
 # Testing
-This API contains a Postman collection in the request folder that you can import to test the endpoints.
-Make sure you replace the id placeholder with a valid id where necessary.
+This folder contains a Postman collection in the request folder that you can import to test the endpoints.
+Make sure you replace the roomId and roomTypeId placeholder with a valid id where necessary.
 
 - You need to have Postman or any other similar app or extension installed to test this API.
 
