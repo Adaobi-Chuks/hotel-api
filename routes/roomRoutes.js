@@ -13,6 +13,7 @@ router.post("/", async (req, res) => {
         res.status(201)
             .send({ message: ROOM.CREATED, success: true, data });
     } catch (err) {
+        //catch mongodb error if the room has already been created
         if(err.code === 11000) {
             res.status(400)
             .send({ message: ROOM.DUPLICATE_ERROR, success: false });
@@ -27,6 +28,7 @@ router.get("/:id", async (req, res) => {
     try {
         const id = req.params.id;
         const data = await Controller.getRoomById(id);
+        //catch error if the id doesn't exist
         if(!data) {
             res.status(404)
             .send({ message: ROOM.INVALID_ID_ERROR, success: false});
@@ -58,6 +60,7 @@ router.patch("/:id", async (req, res) => {
         const id = req.params.id;
         const obj = req.body;
         const data = await Controller.editRoomById(id, obj);
+        //catch error if the id doesn't exist
         if(!data) {
             res.status(404)
             .send({ message: ROOM.INVALID_ID_ERROR, success: false});
@@ -75,11 +78,12 @@ router.delete("/:id", async (req, res) => {
     try {
         const id = req.params.id;
         const data = await Controller.deleteRoomById(id);
+        //catch error if the id doesn't exist
         if(!data) {
             res.status(404)
             .send({ message: ROOM.INVALID_ID_ERROR, success: false});
         }
-        res.status(201)
+        res.status(204)
             .send({ message: ROOM.DELETED, success: true, data });
     } catch (err) {
         res.status(500)
