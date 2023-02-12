@@ -1,6 +1,7 @@
 const express = require("express");
 const Controller = require("../controllers/roomController");
-const {ROOM} = require("../constants/constants");
+const {MESSAGES} = require("../constants/constants");
+const {CREATED, FETCHED, FETCHEDALL, UPDATED, DELETED, DUPLICATE_ERROR, INVALID_ID_ERROR, ERROR} = MESSAGES.ROOM;
 const app = express();
 const router = express.Router();
 
@@ -11,15 +12,15 @@ router.post("/", async (req, res) => {
     try {
         const data = await Controller.addRoom(req.body);
         res.status(201)
-            .send({ message: ROOM.CREATED, success: true, data });
+            .send({ message: CREATED, success: true, data });
     } catch (err) {
         //catch mongodb error if the room has already been created
         if(err.code === 11000) {
             res.status(400)
-            .send({ message: ROOM.DUPLICATE_ERROR, success: false });
+            .send({ message: DUPLICATE_ERROR, success: false });
         }
         res.status(500)
-            .send({ message: err.message || ROOM.ERROR, success: false });
+            .send({ message: err.message || ERROR, success: false });
     }
 });
 
@@ -31,13 +32,13 @@ router.get("/:id", async (req, res) => {
         //catch error if the id doesn't exist
         if(!data) {
             res.status(404)
-            .send({ message: ROOM.INVALID_ID_ERROR, success: false});
+            .send({ message: INVALID_ID_ERROR, success: false});
         }
         res.status(201)
-            .send({ message: ROOM.FETCHED, success: true, data });
+            .send({ message: FETCHED, success: true, data });
     } catch (err) {
         res.status(500)
-            .send({ message: err.message || ROOM.ERROR, success: false });
+            .send({ message: err.message || ERROR, success: false });
     }
 });
 
@@ -47,10 +48,10 @@ router.get("/", async (req, res) => {
         const { search, roomType, minPrice, maxPrice } = req.query;
         const data = await Controller.getAllRooms(search, roomType, minPrice, maxPrice);
         res.status(201)
-            .send({ message: ROOM.FETCHEDALL, success: true, data });
+            .send({ message: FETCHEDALL, success: true, data });
     } catch (err) {
         res.status(500)
-            .send({ message: err.message || ROOM.ERROR, success: false });
+            .send({ message: err.message || ERROR, success: false });
     }
 });
 
@@ -63,13 +64,13 @@ router.patch("/:id", async (req, res) => {
         //catch error if the id doesn't exist
         if(!data) {
             res.status(404)
-            .send({ message: ROOM.INVALID_ID_ERROR, success: false});
+            .send({ message: INVALID_ID_ERROR, success: false});
         }
         res.status(201)
-            .send({ message: ROOM.UPDATED, success: true, data });
+            .send({ message: UPDATED, success: true, data });
     } catch (err) {
         res.status(500)
-            .send({ message: err.message || ROOM.ERROR, success: false });
+            .send({ message: err.message || ERROR, success: false });
     }
 });
 
@@ -81,13 +82,13 @@ router.delete("/:id", async (req, res) => {
         //catch error if the id doesn't exist
         if(!data) {
             res.status(404)
-            .send({ message: ROOM.INVALID_ID_ERROR, success: false});
+            .send({ message: INVALID_ID_ERROR, success: false});
         }
         res.status(204)
-            .send({ message: ROOM.DELETED, success: true, data });
+            .send({ message: DELETED, success: true, data });
     } catch (err) {
         res.status(500)
-            .send({ message: err.message || ROOM.ERROR, success: false });
+            .send({ message: err.message || ERROR, success: false });
     }
 });
 
