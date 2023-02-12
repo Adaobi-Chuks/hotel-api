@@ -1,0 +1,229 @@
+{
+	"info": {
+		"_postman_id": "7363fd86-8c5f-43cf-9d79-7d01b3ae9d45",
+		"name": "Request",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22416364"
+	},
+	"item": [
+		{
+			"name": "RoomTypeRequest",
+			"item": [
+				{
+					"name": "CreateRoomType",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Single\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/v1/rooms-types",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"rooms-types"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllRoomTypes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/v1/rooms-types",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"rooms-types"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteRoomTypes",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/v1/rooms-types/{roomTypeId}",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"rooms-types",
+								"{roomTypeId}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "RoomRequest",
+			"item": [
+				{
+					"name": "CreateRoom",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"100\",\r\n  \"roomType\": \"{roomTypeId}\",\r\n  \"price\": \"50000\",\r\n  \"floor\": \"5\",\r\n  \"capacity\": \"5\",\r\n  \"amenities\": [\"Air condition\", \"Television\"],\r\n  \"booked\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/v1/rooms",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"rooms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetRoom",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/v1/rooms/{roomId}",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"rooms",
+								"{roomId}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllRooms",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/v1/rooms?search=100&roomType={roomTypeId}&minPrice=0&maxPrice=20000000",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"rooms"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "100"
+								},
+								{
+									"key": "roomType",
+									"value": "{roomTypeId}"
+								},
+								{
+									"key": "minPrice",
+									"value": "0"
+								},
+								{
+									"key": "maxPrice",
+									"value": "20000000"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EditRoom",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"200\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/v1/rooms/{roomId}",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"rooms",
+								"{roomId}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteRoom",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/v1/rooms/{roomId}",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"rooms",
+								"{roomId}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
