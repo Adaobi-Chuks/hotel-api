@@ -32,6 +32,7 @@ DATABASE_URI = {The DATABASE_URI you created}
 ```
 npm init -y
 npm install
+nodemon app
 ```
 
 # Testing
@@ -58,11 +59,18 @@ The API has two main routes: Room and Room Type routes.
 - DELETE "{baseUrl}/api/v1/rooms/room/:id": Deletes a room by its id.
 
 # Expected Output
-If a request is made from the API, the results should look like this:
+If a request is made from the API, the results should look like this if it is successfull:
 ```
 {
   "message": "Description of the response",
   "success": true,
   "data": {...}
+}
+```
+If there is an error, it should look like this:
+```
+{
+  "message": "Error description",
+  "success": false
 }
 ```
