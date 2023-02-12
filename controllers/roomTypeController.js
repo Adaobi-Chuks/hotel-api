@@ -1,4 +1,5 @@
-const RoomType = require('../models/roomType');
+const RoomType = require("../models/roomType");
+const {V} = require("../constants/constants")
 
 class Controller {
 
@@ -9,7 +10,7 @@ class Controller {
 
     //get all roomtypes
     async getAllRoomTypes() {
-        return await RoomType.find({}, "-__v");
+        return await RoomType.find({}, V);
     }
     
     //delete room types using an id

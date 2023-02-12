@@ -1,6 +1,5 @@
-const Room = require('../models/room');
-const constants = require("../constants/constants");
-const {ZERO} = constants;
+const Room = require("../models/room");
+const {ZERO, I} = require("../constants/constants");
 
 class Controller {
 
@@ -17,7 +16,7 @@ class Controller {
     //get all rooms with some queries
     async getAllRooms(search, roomType, minPrice = ZERO, maxPrice = Number.MAX_SAFE_INTEGER) {
         const queries = {
-            name: { $regex: new RegExp(search, 'i') },
+            name: { $regex: new RegExp(search, I) },
             roomType: roomType,
             price: { $gte: parseInt(minPrice), $lte: parseInt(maxPrice)}
         };

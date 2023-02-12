@@ -1,18 +1,18 @@
 const mongoose = require("mongoose");
-mongoose.set('strictQuery', true);
-const constants = require("../constants/constants");
+mongoose.set("strictQuery", true);
+const {DATABASE_URI, MESSAGES} = require("../constants/constants");
 
 function database() {
-    mongoose.connect(constants.DATABASE_URI, {
+    mongoose.connect(DATABASE_URI, {
             // useCreateIndex:true,
             // useNewUrlParser:true,
             // userUnifiedTopology:true,
         })
         .then(() => {
-            console.log("Yay! MongoDB is connected");
+            console.log(MESSAGES.DATABASE.CONNECTED);
         })
         .catch((err) => {
-            console.log("There was an error while connecting to the database.");
+            console.log(MESSAGES.DATABASE.ERROR);
         });
 }
 

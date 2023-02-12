@@ -1,4 +1,4 @@
-const {model, Schema, Types} = require('mongoose');
+const {model, Schema, Types} = require("mongoose");
 const constants = require("../constants/constants");
 const {DATABASES} = constants;
 const ObjectId = Types.ObjectId;
@@ -11,7 +11,7 @@ const RoomSchema = new Schema({
   },
   roomType: {
     type: ObjectId,
-    ref: 'RoomType',
+    ref: DATABASES.ROOMTYPE,
     required: true
   },
   price: {

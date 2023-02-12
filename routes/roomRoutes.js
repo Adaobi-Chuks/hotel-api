@@ -1,9 +1,8 @@
-const express = require('express');
-const Controller = require('../controllers/roomController');
-const constants = require("../constants/constants");
+const express = require("express");
+const Controller = require("../controllers/roomController");
+const {ROOM} = require("../constants/constants");
 const app = express();
 const router = express.Router();
-const {ROOM} = constants.MESSAGES;
 
 app.use(express.json());
 

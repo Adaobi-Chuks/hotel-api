@@ -3,6 +3,10 @@ const constants = {
 
     ZERO: 0,
 
+    I: "i",
+
+    V: "-__v",
+
     DATABASES: {
         ROOMTYPE: "roomType",
         ROOM: "room"
@@ -26,6 +30,10 @@ const constants = {
             DUPLICATE_ERROR: "Roomname already exists",
             INVALID_ID_ERROR: "Invalid id",
             ERROR: "Error performing request on room"
+        },
+        DATABASE: {
+            CONNECTED: "MongoDB is connected",
+            ERROR: "There was an error while connecting to the database."
         }
     }
 };

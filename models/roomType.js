@@ -1,4 +1,4 @@
-const {model, Schema} = require('mongoose');
+const {model, Schema} = require("mongoose");
 const constants = require("../constants/constants");
 const {DATABASES} = constants;
 
